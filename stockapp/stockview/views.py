@@ -21,8 +21,8 @@ def home(request):
         return render(request, 'home.html', {'ticker': "Enter symbol"})
 
 
-def deletestock(request):
-    return render(request, 'deletestock.html', {})
+def delete_stock(request):
+    return render(request, 'delete_stock.html', {})
 
 def add_stock(request):
     import requests 
@@ -53,4 +53,8 @@ def delete(request, stock_id):
     item = stocks.objects.get(pk=stock_id)
     item.delete()
     messages.success(request, "Stock has been deleted.")
-    return redirect(add_stock)
+    return redirect(delete_stock)
+
+def delete_stock(request):
+    ticker = stocks.objects.all()
+    return render(request, 'delete_stock.html', {'ticker': ticker})
