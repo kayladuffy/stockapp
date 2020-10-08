@@ -5,6 +5,16 @@
 
 <br/><br/>
 
-{{ api }}
+{% if api %}
+    {% if api  == "Error" %}
+        There was a problem. Please try again. 
+    {% else %}
+
+            {% for key, value in api.items %}
+                {{ key }}: {{ value }}<br/>
+            {% endfor %}
+
+    {% endif %}
+{% endif %}
 
 {% endblock %}
