@@ -22,7 +22,7 @@ def home(request):
 
 
 def about(request):
-    return render(request, 'about.html', {})
+    return render(request, 'deletestock.html', {})
 
 def add_stock(request):
     import requests 
