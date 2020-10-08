@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import stocks
 
 def home(request):
     import requests 
@@ -22,4 +23,6 @@ def about(request):
     return render(request, 'about.html', {})
 
 def add_stock(request):
-    return render(request, 'add_stock.html', {})
+
+    ticker = stocks.objects.all()
+    return render(request, 'add_stock.html', {'ticker': ticker})
