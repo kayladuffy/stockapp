@@ -24,6 +24,9 @@ def home(request):
 def delete_stock(request):
     return render(request, 'delete_stock.html', {})
 
+def graphs(request):
+    return render(request, 'graphs.html', {})
+
 def add_stock(request):
     import requests 
     import json
