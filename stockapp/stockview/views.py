@@ -21,7 +21,7 @@ def home(request):
         return render(request, 'home.html', {'ticker': "Enter symbol"})
 
 
-def about(request):
+def deletestock(request):
     return render(request, 'deletestock.html', {})
 
 def add_stock(request):
