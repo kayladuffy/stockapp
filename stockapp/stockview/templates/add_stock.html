@@ -20,20 +20,33 @@
         <th scope="col">Stock Price</th>
         <th scope="col">Market Cap</th>
         <th scope="col">YTD Change</th>
+        <th scope="col">Delete Stock</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
+{% if ticker %}
+        {% for item in ticker %}
+
+            <tr>
+                <th scope="row">{{ item }}</th>
+                <td>Test</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                <td><a href="{% url 'delete' item.id %}">Delete Stock</a></td>
+            </tr>
+
+        {% endfor %}
+{% endif %}
+
     </tbody>
   </table>
 
 {% for item in ticker %}
     {{ item }} - <a href="{% url 'delete' item.id %}">Delete Stock</a> <br/>
 {% endfor %}
+
+<br/>
+
+
 
 {% endblock %}
