@@ -18,7 +18,7 @@ def home(request):
         return render(request, 'home.html', {'api': api})
     
     else:
-        return render(request, 'home.html', {'ticker': "Enter symbol"})
+        return render(request, 'home.html', {'ticker': "Stock App"})
 
 
 def delete_stock(request):
