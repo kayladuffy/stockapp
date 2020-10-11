@@ -27,7 +27,7 @@ SECRET_KEY = 'r5717qx&^rekuh*7#-1gwpimosrdebo8g^%rl!)xtq6#^3h2he'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [https://duffy-stock-app.herokuapp.com]
 
 
 # Application definition
